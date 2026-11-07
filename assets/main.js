@@ -55,7 +55,7 @@
     viewWork: { en: "View projects", ko: "프로젝트 보기" },
   };
 
-  var SECTIONS = ["about", "publications", "projects", "grants", "experience"];
+  var SECTIONS = ["about", "experience", "publications", "projects", "grants"];
 
   /* ── Icons (inline SVG, stroke-based) ───────────────────── */
   var P = {
@@ -270,7 +270,7 @@
     }).join("");
 
     document.getElementById("app").innerHTML =
-      hero() + about(1) + publications(2) + projects(3) + grants(4) + experience(5);
+      hero() + about(1) + experience(2) + publications(3) + projects(4) + grants(5);
 
     var L = C.profile.links || {};
     var fl = "";
