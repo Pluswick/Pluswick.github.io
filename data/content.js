@@ -14,59 +14,36 @@ window.CONTENT = {
     initials: "SK",
     kicker: { en: "AI Researcher", ko: "AI 연구자" },
     title: {
-      en: "Hello!👋 I'm currently studying AI for Computer Vision, Bio, and On-Device Inference.",
-      ko: "안녕하세요!👋 저는 컴퓨터 비전·바이오·온디바이스 추론을 위한 AI를 연구하고 있습니다.",
+      en: "My research focuses on machine learning for computer vision, the bio domain, and on-device inference.",
+      ko: "컴퓨터 비전, 바이오 분야, 온디바이스 추론을 위한 기계학습을 연구하고 있습니다.",
     },
     education: {
       school: { en: "Sangmyung University", ko: "상명대학교" },
       degree: { en: "B.S. candidate", ko: "학사 졸업 예정" },
-      graduation: "2027.02", // e.g. "2027.02" — leave empty to hide
+      graduation: "2027.02",
+      logo: "images/smu-logo.png", // e.g. "2027.02" — leave empty to hide
       majors: [
         { name: { en: "Electronic Engineering", ko: "융합전자공학전공" }, note: { en: "1st major", ko: "1전공" } },
         { name: { en: "Human-Centered AI Engineering", ko: "휴먼AI공학전공" }, note: { en: "2nd major", ko: "2전공" } },
       ],
     },
-    about: {
-      en: "I'm a final-year undergraduate at Sangmyung University, double-majoring in Electronic Engineering and Human-Centered AI Engineering. My work spans computer vision for general and medical imaging, AI for the bio domain, and on-device AI on embedded systems such as NPUs. As the lead researcher on industry and institute-funded projects, I have covered everything from model design to NPU deployment, and turned two of them into first-author journal manuscripts. In my master's program, I aim to study model compression and optimization, how training data affects model performance, and reinforcement learning.",
-      ko: "상명대학교 융합전자공학전공(1전공)과 휴먼AI공학전공(2전공) 졸업 예정자입니다. 일반·의료 영상을 다루는 컴퓨터 비전, 바이오 분야를 위한 AI, NPU와 같은 임베디드 시스템의 온디바이스 AI를 연구해 왔습니다. 기업·연구기관 과제의 실무 책임을 맡아 모델 설계부터 NPU 배포까지 다뤘고, 그중 두 프로젝트를 1저자 저널 논문 작성으로 이어갔습니다. 석사 과정에서는 모델 구조 경량화 및 최적화, 학습 데이터가 모델 성능에 미치는 영향, 그리고 강화학습을 연구하고자 합니다.",
-    },
+    // Each item is one paragraph
+    about: [
+      {
+        en: "I'm a final-year undergraduate at Sangmyung University, double-majoring in Electronic Engineering and Human-Centered AI Engineering. My work spans computer vision for general and medical imaging, AI for the bio domain, and on-device AI on embedded systems such as NPUs. As the lead researcher on industry and institute-funded projects, I have covered everything from model design to NPU deployment, and turned two of them into first-author journal manuscripts.",
+        ko: "상명대학교 융합전자공학전공(1전공)과 휴먼AI공학전공(2전공) 졸업 예정자입니다. 일반·의료 영상을 다루는 컴퓨터 비전, 바이오 분야를 위한 AI, NPU와 같은 임베디드 시스템의 온디바이스 AI를 연구해 왔습니다. 기업·연구기관 과제의 실무 책임을 맡아 모델 설계부터 NPU 배포까지 다뤘고, 그중 두 프로젝트를 1저자 저널 논문 작성으로 이어갔습니다.",
+      },
+      {
+        en: "In my master's program, I aim to study model compression and optimization, how training data affects model performance, and reinforcement learning.",
+        ko: "석사 과정에서는 모델 구조 경량화 및 최적화, 학습 데이터가 모델 성능에 미치는 영향, 그리고 강화학습을 연구하고자 합니다.",
+      },
+    ],
     location: { en: "Seoul, Korea", ko: "대한민국 서울" },
     links: {
       email: "lucidus814@gmail.com",
       github: "https://github.com/Pluswick",
     },
   },
-
-  /* ── Experience by field (About section) ─────────────────────
-   * Project / paper counts are computed automatically from the
-   * `domains` of each project and publication below.
-   */
-  fields: [
-    {
-      id: "vision",
-      title: { en: "Vision & Medical Imaging", ko: "비전·의료 영상" },
-      desc: {
-        en: "Skin-condition and aging analysis, 3D reconstruction from video, diffusion-based augmentation and few-shot anomaly detection.",
-        ko: "피부 상태·노화 분석, 영상 기반 3D 복원, 확산모델 증강과 few-shot 이상 탐지",
-      },
-    },
-    {
-      id: "bio",
-      title: { en: "Bio-AI & Drug Discovery", ko: "바이오 AI·신약개발" },
-      desc: {
-        en: "Molecular property prediction with graph neural networks — tissue partitioning (Kp) and multi-species aquatic toxicity.",
-        ko: "그래프 신경망 기반 분자 물성 예측 — 조직 분배계수(Kp), 다종 수생독성 예측",
-      },
-    },
-    {
-      id: "embedded",
-      title: { en: "Embedded & On-device AI", ko: "임베디드·온디바이스 AI" },
-      desc: {
-        en: "Deploying models on NPUs — operator-aware model design, quantization, and real-time inference pipelines in C.",
-        ko: "NPU 모델 배포 — 연산자를 고려한 모델 설계, 양자화, C 기반 실시간 추론 파이프라인",
-      },
-    },
-  ],
 
   /* ── Publications ────────────────────────────────────────── */
   publications: [
@@ -75,6 +52,7 @@ window.CONTENT = {
       position: 1,
       venue: "Journal of Pharmacokinetics and Pharmacodynamics (Springer Nature)",
       index: "SCIE", quartile: "Q2",
+      thumb: "images/pub-kp.png",
       domains: ["bio"],
       status: "review",
       year: "2026",
@@ -84,6 +62,7 @@ window.CONTENT = {
       position: 1,
       venue: "Journal of Cheminformatics (Springer Nature)",
       index: "SCIE", quartile: "Q1",
+      thumb: "images/pub-aqua.png",
       link: "https://www.researchsquare.com/article/rs-10915713/v1",
       linkLabel: { en: "Preprint", ko: "프리프린트" },
       domains: ["bio"],
@@ -98,6 +77,7 @@ window.CONTENT = {
       position: 4,
       venue: { en: "IEIE Summer Conference 2025", ko: "2025 대한전자공학회 하계학술대회" },
       domains: ["vision", "embedded"],
+      thumb: "images/pub-iris.png",
       status: "published",
       year: "2025",
     },
