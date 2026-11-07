@@ -24,7 +24,8 @@
     lead: { en: "Lead Researcher", ko: "실무 책임" },
     ongoing: { en: "ongoing", ko: "진행 중" },
     role: { en: "Role", ko: "역할" },
-    outcome: { en: "Outcome", ko: "결과" },
+    outcome: { en: "Outcome", ko: "성과" },
+    results: { en: "Results", ko: "결과" },
     status: {
       review: { en: "Under review", ko: "심사 중" },
       published: { en: "Published", ko: "게재" },
@@ -136,6 +137,7 @@
         (p.link ? '<span class="links"><a href="' + esc(p.link) + '" target="_blank" rel="noopener">[' + T(p.linkLabel || "Link") + "]</a></span>" : "");
       return '<li class="' + (p.thumb ? "" : "no-thumb") + '">' + thumb(p.thumb, p.title) +
         "<div>" + title + '<p class="it-meta"><em>' + T(p.venue) + "</em>" + (p.year && t(p.venue).indexOf(t(p.year)) < 0 ? ", " + T(p.year) : "") + "</p>" +
+        (p.results ? '<p class="it-out"><b>' + T(UI.results) + ".</b> " + T(p.results) + "</p>" : "") +
         '<div class="tags">' + tags + "</div></div></li>";
     }).join("");
     return section("publications", UI.nav.publications, '<ul class="items">' + items + "</ul>");
@@ -155,9 +157,10 @@
         '<p class="it-meta">' + T(p.org) + ", " + T(p.period) + (p.ongoing ? " (" + T(UI.ongoing) + ")" : "") + "</p>" +
         (p.role ? '<p class="it-role"><b>' + T(UI.role) + ".</b> " + T(p.role) + "</p>" : "") +
         (p.desc ? '<p class="it-desc">' + T(p.desc) + "</p>" : "") +
+        (p.results ? '<p class="it-out"><b>' + T(UI.results) + ".</b> " + T(p.results) + "</p>" : "") +
         (p.outcome ? '<p class="it-out"><b>' + T(UI.outcome) + ".</b> " + T(p.outcome) + "</p>" : "") +
         '<div class="tags">' + tags + "</div>" +
-        (p.link ? '<p class="links"><a href="' + esc(p.link) + '" target="_blank" rel="noopener">[Link]</a></p>' : "") +
+        (p.link ? '<p class="links"><a href="' + esc(p.link) + '" target="_blank" rel="noopener">[' + T(p.linkLabel || "Link") + "]</a></p>" : "") +
         "</div></li>";
     }).join("");
     return section("projects", UI.nav.projects, '<div class="filter" role="tablist">' + f + '</div><ul class="items">' + items + "</ul>");

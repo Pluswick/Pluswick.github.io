@@ -63,6 +63,10 @@ window.CONTENT = {
       venue: "Journal of Cheminformatics (Springer Nature)",
       index: "SCIE", quartile: "Q1",
       thumb: "images/pub-aqua.png",
+      results: {
+        en: "Species information lowered RMSE by 0.07–0.20 log10 units in every dataset, backbone, and split, but choosing among informative representations did not reliably improve accuracy further (9 of 12 comparisons with one-hot identity fell within re-run noise).",
+        ko: "종 정보를 추가하면 모든 데이터셋·모델·분할에서 RMSE가 0.07–0.20 log10 단위 낮아졌지만, 종 정보를 담은 표현들 사이의 선택은 성능을 일관되게 더 높이지 못함(one-hot 대비 12개 비교 중 9개가 재실행 노이즈 이내)",
+      },
       link: "https://www.researchsquare.com/article/rs-10915713/v1",
       linkLabel: { en: "Preprint", ko: "프리프린트" },
       domains: ["bio"],
@@ -159,6 +163,8 @@ window.CONTENT = {
       title: "Bifusion",
       org: { en: "Capstone Project", ko: "캡스톤 디자인" },
       period: "2026.03 – 2026.11",
+      link: "https://github.com/NodataNolife",
+      linkLabel: "GitHub",
       image: "images/bifusion.png",
       imageAlt: { en: "Bifusion Research Hub interface", ko: "Bifusion Research Hub 화면" },
       domains: ["vision"], type: "team", ongoing: true,
@@ -237,10 +243,14 @@ window.CONTENT = {
         ko: "팀장, 메인 프로그래머, 양자화 및 NPU 최적화",
       },
       desc: {
-        en: "Designed an EfficientNet-B0-based age/gender classification model on the Kneron KL630 NPU with the Kneron SDK in Docker.",
-        ko: "Kneron KL630 NPU, Kneron SDK, Docker 환경에서 EfficientNet-B0 기반 Age/Gender Classification 모델 설계",
+        en: "Built a face-analysis pipeline on the Kneron KL630 NPU: YOLOv5s face detection, an EfficientNet-B0 emotion classifier (alert / non-alert), and gender and age-group classifiers compressed into MobileNetV3-Small by knowledge distillation from RegNetY-1.6GF teachers, quantized and deployed with the Kneron SDK in Docker.",
+        ko: "Kneron KL630 NPU 기반 얼굴 분석 파이프라인 구축: YOLOv5s 얼굴 검출, EfficientNet-B0 감정 분류(경계/비경계), RegNetY-1.6GF teacher에서 MobileNetV3-Small로 지식 증류한 성별·연령대 분류 모델을 Kneron SDK·Docker 환경에서 양자화해 배포",
       },
-      tech: ["Kneron KL630", "EfficientNet-B0", "Quantization", "Docker"],
+      tech: ["Kneron KL630", "YOLOv5s", "EfficientNet-B0", "MobileNetV3-Small", "Knowledge Distillation", "Quantization", "Docker"],
+      results: {
+        en: "Face detection mAP@0.5 0.861 (YOLOv5s fine-tuned on CelebA); validation accuracy of 98.42% for gender and 69.10% for age group with lightweight student models trained by knowledge distillation.",
+        ko: "얼굴 검출 mAP@0.5 0.861(YOLOv5s, CelebA 파인튜닝), 지식 증류로 학습한 경량 모델의 검증 정확도 성별 98.42%, 연령대 69.10%",
+      },
     },
     {
       title: { en: "NPU-based Real-time Iris Recognition System", ko: "NPU 기반 실시간 홍채 인식 시스템 개발" },
@@ -254,6 +264,10 @@ window.CONTENT = {
         ko: "홍채 segmentation의 속눈썹 제거에 가우시안 필터를 적용해 성능 향상, Python 코드를 C로 포팅",
       },
       tech: ["NPU", "Iris Segmentation", "Python → C"],
+      results: {
+        en: "Segmentation IoU 0.94–0.97 and mAP50 0.99 for iris, pupil, and eyelid; 47.4 ms per image end-to-end on the NPU (about 21 FPS), roughly 7× faster than Jetson Nano with TensorRT (330.7 ms).",
+        ko: "홍채·동공·눈꺼풀 분할 IoU 0.94–0.97, mAP50 0.99. NPU에서 이미지당 전체 처리 47.4ms(약 21 FPS)로, TensorRT를 적용한 Jetson Nano(330.7ms)보다 약 7배 빠름",
+      },
       outcome: { en: "IEIE Summer Conference paper (co-author)", ko: "대한전자공학회 하계학술대회 논문 (공동저자)" },
     },
   ],
