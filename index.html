@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seonghan Kim — AI Researcher</title>
+  <meta name="description" content="Undergraduate researcher working on computer vision, Bio AI, and on-device AI (NPU)." />
+  <meta property="og:title" content="Seonghan Kim — AI Researcher" />
+  <meta property="og:description" content="Computer Vision · Bio AI · On-device AI" />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0b1019" />
+
+  <!-- Apply saved theme before paint (prevents flash) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" id="brand">Seonghan Kim<span>.</span></a>
+      <nav class="nav-links" id="nav-links" aria-label="Sections"></nav>
+      <div class="nav-actions">
+        <div class="seg" role="group" aria-label="Language">
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="ko">KO</button>
+        </div>
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"></button>
+        <button type="button" class="icon-btn menu-btn" id="menu-toggle" aria-label="Open menu" aria-expanded="false"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app"></main>
+  <footer class="footer" id="footer"></footer>
+
+  <noscript><p style="padding:2rem;text-align:center">Please enable JavaScript to view this page.</p></noscript>
+
+  <script src="data/content.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>
