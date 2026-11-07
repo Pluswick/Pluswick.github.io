@@ -46,9 +46,8 @@
       preparing: { en: "In preparation", ko: "준비 중" },
     },
     author: function (n) {
-      if (lang === "ko") return n + "저자";
-      var s = ["th", "st", "nd", "rd"], v = n % 100;
-      return n + (s[(v - 20) % 10] || s[v] || s[0]) + " author";
+      if (n === 1) return lang === "ko" ? "1저자" : "1st author";
+      return lang === "ko" ? "공동저자" : "Co-author";
     },
     email: { en: "Email", ko: "이메일" },
     toTop: { en: "Back to top", ko: "맨 위로" },
@@ -191,7 +190,9 @@
       return '<article class="pub card reveal">' +
         '<div class="pub-side"><span class="pos' + (p.position === 1 ? " first" : "") + '">' + esc(UI.author(p.position)) + '</span><span class="yr">' + T(p.year) + "</span></div>" +
         '<div class="pub-body"><h3>' + (p.link ? '<a href="' + esc(p.link) + '" target="_blank" rel="noopener">' + T(p.title) + "</a>" : T(p.title)) + "</h3>" +
-        '<p class="venue">' + T(p.venue) + '</p><div class="pub-meta"><span class="badge st-' + esc(st) + '">' + T(UI.status[st]) + "</span>" +
+        '<p class="venue">' + T(p.venue) + '</p><div class="pub-meta">' +
+        (p.index ? '<span class="badge idx">' + esc(p.index) + (p.quartile ? '<span class="q">' + esc(p.quartile) + "</span>" : "") + "</span>" : "") +
+        '<span class="badge st-' + esc(st) + '">' + T(UI.status[st]) + "</span>" +
         (p.link ? '<a class="pub-link" href="' + esc(p.link) + '" target="_blank" rel="noopener">' + icon("ext") + T(p.linkLabel || "Link") + "</a>" : "") +
         "</div></div></article>";
     }).join("");
@@ -257,7 +258,7 @@
         x.items.map(function (it) { return "<li>" + T(it) + "</li>"; }).join("") + "</ul></article>";
     }).join("");
     return '<section id="experience"><div class="wrap">' + head("experience", i) +
-      '<div class="exp-grid"><ol class="timeline">' + tl + '</ol><div class="extra-grid">' + extras + "</div></div></div></section>";
+      '<ol class="timeline">' + tl + '</ol><div class="extra-grid">' + extras + "</div></div></section>";
   }
 
   /* ── Render ─────────────────────────────────────────────── */

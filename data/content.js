@@ -74,6 +74,7 @@ window.CONTENT = {
       title: "Dissecting Tissue-Context Effects in Graph Neural Networks for Rat Kp Prediction: Additive Shifts, Fusion Position, and Extrapolation",
       position: 1,
       venue: "Journal of Pharmacokinetics and Pharmacodynamics (Springer Nature)",
+      index: "SCIE", quartile: "Q2",
       domains: ["bio"],
       status: "review",
       year: "2026",
@@ -82,6 +83,7 @@ window.CONTENT = {
       title: "The choice of species representation in multi-species aquatic acute-toxicity prediction is constrained by data availability rather than by predictive accuracy",
       position: 1,
       venue: "Journal of Cheminformatics (Springer Nature)",
+      index: "SCIE", quartile: "Q1",
       link: "https://www.researchsquare.com/article/rs-10915713/v1",
       linkLabel: { en: "Preprint", ko: "프리프린트" },
       domains: ["bio"],
@@ -272,7 +274,7 @@ window.CONTENT = {
         ko: "홍채 segmentation의 속눈썹 제거에 가우시안 필터를 적용해 성능 향상, Python 코드를 C로 포팅",
       },
       tech: ["NPU", "Iris Segmentation", "Python → C"],
-      outcome: { en: "IEIE Summer Conference paper (4th author)", ko: "대한전자공학회 하계학술대회 논문 (4저자)" },
+      outcome: { en: "IEIE Summer Conference paper (co-author)", ko: "대한전자공학회 하계학술대회 논문 (공동저자)" },
     },
   ],
 
@@ -310,20 +312,12 @@ window.CONTENT = {
     },
     {
       icon: "users",
-      title: { en: "Leadership", ko: "리더십" },
+      title: { en: "Activities", ko: "교내외활동" },
       items: [
         { en: "Student Council President, Intelligent IoT Convergence / Electronic Engineering (2025)", ko: "지능-IoT융합전공/융합전자공학전공 학생회장 (2025)" },
         { en: "Student Council Vice President (Fall 2024)", ko: "부학회장 (2024년 2학기)" },
-        { en: "Programming Club INIRO (2021 – 2025)", ko: "프로그래밍 동아리 이니로 (2021 – 2025)" },
-      ],
-    },
-    {
-      icon: "book",
-      title: { en: "Teaching & Mentoring", ko: "멘토링 및 교육" },
-      items: [
-        { en: "C Language Mentor (2021, 2024)", ko: "C언어 멘토 (2021, 2024)" },
-        { en: "Python Mentor (2021)", ko: "Python 멘토 (2021)" },
-        { en: "Hackathon Team Mentor, Sangmyung Univ. Affiliated Girls' High School (2024.08)", ko: "상명대부속여고 해커톤 팀멘토 (2024.08)" },
+        { en: "Hackathon Instructor, Sangmyung Univ. Affiliated Girls' High School (2024.08)", ko: "상명대부속여고 해커톤 교육강사 (2024.08)" },
+        { en: "INIRO — Programming Club (2021 – 2025)", ko: "이니로 — 프로그래밍 동아리 (2021 – 2025)" },
       ],
     },
     {
