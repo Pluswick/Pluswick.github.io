@@ -1,0 +1,100 @@
+@font-face { font-family: "Source Sans 3"; font-weight: 400; font-style: normal; src: url("fonts/source-sans-3-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 400; font-style: italic; src: url("fonts/source-sans-3-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 600; font-style: normal; src: url("fonts/source-sans-3-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 600; font-style: italic; src: url("fonts/source-sans-3-latin-600-italic.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 700; font-style: normal; src: url("fonts/source-sans-3-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 700; font-style: italic; src: url("fonts/source-sans-3-latin-700-italic.woff2") format("woff2"); }
+
+:root {
+  --ink: #1a1a1a;
+  --soft: #444;
+  --head: #1f3b73;
+  --link: #1d4fa0;
+  --note: #c0392b;
+  --rule: #9aa5b8;
+}
+
+@page { size: A4; margin: 12mm 13mm 12mm 13mm; }
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0; background: #e9ebef; color: var(--ink);
+  font-family: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-size: 9.8pt; line-height: 1.28;
+}
+a { color: var(--link); text-decoration: none; }
+p, ul, ol, h1, h2, h3 { margin: 0; padding: 0; }
+
+/* Screen preview */
+.toolbar {
+  max-width: 210mm; margin: 16px auto 0; display: flex; justify-content: space-between; align-items: center;
+  font-size: 11pt;
+}
+.toolbar button {
+  font: inherit; padding: 5px 12px; border: 1px solid #b8bfcc; border-radius: 4px; background: #fff; cursor: pointer;
+}
+.sheet {
+  width: 210mm; min-height: 297mm; margin: 12px auto 40px; padding: 13mm 14mm;
+  background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+
+/* Header */
+.hd { display: grid; grid-template-columns: 1fr auto; row-gap: 2px; align-items: end; }
+.hd h1 { font-size: 24pt; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
+.hd .r { text-align: right; font-size: 9.5pt; }
+.hd .links { font-size: 9.5pt; }
+.hd .links a { text-decoration: underline; text-underline-offset: 1.5px; }
+
+/* Sections */
+section { margin-top: 11px; }
+h2 {
+  font-size: 12pt; font-weight: 700; color: var(--head); font-variant: small-caps; letter-spacing: .03em;
+  border-bottom: .8px solid var(--rule); padding-bottom: 1px; margin-bottom: 5px;
+}
+h2 .sub { font-weight: 600; font-size: 10.5pt; }
+h3 { font-size: 10pt; font-weight: 700; margin: 7px 0 3px; }
+h2 + h3 { margin-top: 2px; }
+
+.summary { text-align: justify; }
+
+/* Two-column rows: left text, right date/location */
+.row { display: flex; justify-content: space-between; gap: 12px; }
+.row > :last-child { white-space: nowrap; text-align: right; }
+.entry { break-inside: avoid; }
+.entry + .entry { margin-top: 5px; }
+.b { font-weight: 700; }
+.i { font-style: italic; }
+.muted { color: var(--soft); }
+
+/* Publications */
+ol.pubs { list-style: none; counter-reset: pub; }
+ol.pubs > li { counter-increment: pub; position: relative; padding-left: 16px; break-inside: avoid; }
+ol.pubs > li + li { margin-top: 4px; }
+ol.pubs > li::before { content: counter(pub) "."; position: absolute; left: 0; top: 0; }
+.ptitle { font-style: italic; }
+.me { font-weight: 700; text-decoration: underline; text-underline-offset: 1.5px; }
+.venue .abbr { font-weight: 700; }
+.note { color: var(--note); }
+
+/* Bullets */
+ul.bul { list-style: none; margin-top: 1px; }
+ul.bul > li { position: relative; padding-left: 22px; }
+ul.bul > li::before { content: "•"; position: absolute; left: 10px; }
+ul.plain { list-style: none; }
+ul.plain > li { position: relative; padding-left: 12px; }
+ul.plain > li::before { content: "•"; position: absolute; left: 2px; }
+ul.plain > li + li { margin-top: 1px; }
+
+.kv b { font-weight: 600; }
+.foot { margin-top: 10px; font-size: 8.5pt; color: #777; text-align: right; }
+
+@media print {
+  body { background: #fff; }
+  .toolbar { display: none; }
+  .sheet { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+}
+@media screen and (max-width: 820px) {
+  .sheet { width: auto; min-height: 0; margin: 12px; padding: 18px; }
+  .toolbar { margin: 12px 12px 0; }
+}

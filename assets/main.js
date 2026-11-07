@@ -32,7 +32,8 @@
       accepted: { en: "Accepted", ko: "게재 승인" },
       preparing: { en: "In preparation", ko: "준비 중" },
     },
-    author: function (n) {
+    author: function (n, equal) {
+      if (n === 1 && equal) return lang === "ko" ? "공동 1저자" : "Co-first author";
       if (n === 1) return lang === "ko" ? "1저자" : "First author";
       return lang === "ko" ? "공동저자" : "Co-author";
     },
@@ -45,6 +46,7 @@
     pin: '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
     mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
     github: '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
+    doc: '<path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>',
     school: '<path d="M2 9 12 4l10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/>',
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
     moon: '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
@@ -94,6 +96,7 @@
     if (E.school) meta += "<li>" + icon("school") + "<span>" + T(E.school) + "</span></li>";
     if (p.location) meta += "<li>" + icon("pin") + "<span>" + T(p.location) + "</span></li>";
     if (L.email) meta += "<li>" + icon("mail") + '<a href="mailto:' + esc(L.email) + '">' + esc(L.email) + "</a></li>";
+    if (L.cv) meta += "<li>" + icon("doc") + '<a href="' + esc(L.cv) + '" target="_blank" rel="noopener">CV (PDF)</a></li>';
     if (L.github) meta += "<li>" + icon("github") + '<a href="' + esc(L.github) + '" target="_blank" rel="noopener">' + esc(L.github.replace(/^https?:\/\/(www\.)?/, "")) + "</a></li>";
     return '<div class="photo"><span class="photo-ph" aria-hidden="true">' + T(p.initials) + "</span>" +
       (p.photo ? '<img src="' + esc(p.photo) + '" alt="' + T(p.name) + '" onerror="this.remove()">' : "") + "</div>" +
@@ -131,7 +134,7 @@
       var title = p.link
         ? '<a class="it-title" href="' + esc(p.link) + '" target="_blank" rel="noopener">' + T(p.title) + "</a>"
         : '<span class="it-title">' + T(p.title) + "</span>";
-      var tags = '<span class="tag strong">' + esc(UI.author(p.position)) + "</span>" +
+      var tags = '<span class="tag strong">' + esc(UI.author(p.position, p.equal)) + "</span>" +
         (p.index ? '<span class="tag">' + esc(p.index) + (p.quartile ? " · " + esc(p.quartile) : "") + "</span>" : "") +
         '<span class="tag ' + esc(st) + '">' + T(UI.status[st]) + "</span>" +
         (p.link ? '<span class="links"><a href="' + esc(p.link) + '" target="_blank" rel="noopener">[' + T(p.linkLabel || "Link") + "]</a></span>" : "");

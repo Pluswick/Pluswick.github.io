@@ -42,6 +42,7 @@ window.CONTENT = {
     links: {
       email: "lucidus814@gmail.com",
       github: "https://github.com/Pluswick",
+      cv: "cv.pdf", // generated from cv.html (see README)
     },
   },
 
@@ -49,8 +50,12 @@ window.CONTENT = {
   publications: [
     {
       title: "Dissecting Tissue-Context Effects in Graph Neural Networks for Rat Kp Prediction: Additive Shifts, Fusion Position, and Extrapolation",
-      position: 1,
+      // "*" marks equal contribution; your own name is highlighted automatically in the CV
+      authors: ["Seonghan Kim*", "Hyunseo Cho*", "Hyeoncheol Jeong*", "Moonkyu Jeong", "Kyongcheol Ko", "Kyeongryoon Lee", "Daesik Jeong"],
+      position: 1, equal: true,
+      kind: "journal",
       venue: "Journal of Pharmacokinetics and Pharmacodynamics (Springer Nature)",
+      cvVenue: "Journal of Pharmacokinetics and Pharmacodynamics (JPKPD)",
       index: "SCIE", quartile: "Q2",
       thumb: "images/pub-kp.png",
       domains: ["bio"],
@@ -59,8 +64,11 @@ window.CONTENT = {
     },
     {
       title: "The choice of species representation in multi-species aquatic acute-toxicity prediction is constrained by data availability rather than by predictive accuracy",
+      authors: ["Seonghan Kim", "Kyungmin Jeon", "Hyunseo Cho", "Seongyun Park", "Daesik Jeong"],
       position: 1,
+      kind: "journal",
       venue: "Journal of Cheminformatics (Springer Nature)",
+      cvVenue: "Journal of Cheminformatics (JCheminf)",
       index: "SCIE", quartile: "Q1",
       thumb: "images/pub-aqua.png",
       results: {
@@ -78,8 +86,13 @@ window.CONTENT = {
         en: "Implementation and Processing-Time Analysis of an NPU-Based Real-Time Iris Recognition System",
         ko: "NPU 기반 실시간 홍채 인식 시스템 구현 및 처리 시간 분석",
       },
-      position: 4,
+      authors: ["Huijae Bae*", "Eunsu Yun*", "Dongwon Lee", "SeonKyun Park", "SeongHan Kim", "JongWeon Kim", "DaeSik Jung"],
+      position: 5,
+      kind: "conference",
       venue: { en: "IEIE Summer Conference 2025", ko: "2025 대한전자공학회 하계학술대회" },
+      cvVenue: "Proceedings of the Institute of Electronics and Information Engineers (IEIE) Summer Conference, pp. 2201–2205, 2025 (in Korean)",
+      link: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12331894",
+      linkLabel: "DBpia",
       domains: ["vision", "embedded"],
       thumb: "images/pub-iris.png",
       status: "published",
@@ -229,7 +242,7 @@ window.CONTENT = {
         ko: "Chemprop 기반 GNN Kp 예측 모델 개발, Streamlit 데모 페이지 개발",
       },
       tech: ["Chemprop", "GNN", "Streamlit"],
-      outcome: { en: "First-author manuscript under review at JPKPD", ko: "Kp 논문 (JPKPD, 심사 중)" },
+      outcome: { en: "Co-first-author manuscript under review at JPKPD", ko: "Kp 논문 (JPKPD, 심사 중, 공동 1저자)" },
     },
     {
       title: { en: "DoorBox — Crime-prevention Smart Doorbell", ko: "DoorBox — 범죄예방 도어벨" },
