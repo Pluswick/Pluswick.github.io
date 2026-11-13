@@ -113,7 +113,7 @@ img { display: block; max-width: 100%; }
 /* Sidebar */
 .side { position: sticky; top: 88px; }
 .photo {
-  width: 200px; max-width: 100%; aspect-ratio: 1 / 1; border-radius: 50%; overflow: hidden;
+  width: 200px; max-width: 100%; aspect-ratio: 4 / 5; border-radius: 8px; overflow: hidden;
   background: var(--bg-soft); position: relative; border: 1px solid var(--line);
 }
 .photo img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
