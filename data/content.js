@@ -303,7 +303,7 @@ window.CONTENT = {
     {
       title: { en: "Undergraduate Researcher", ko: "학부연구생" },
       org: { en: "OpenLab, Dept. of Emotion Engineering, Sangmyung University", ko: "상명대학교 감성공학과 OpenLab" },
-      period: { en: "Summer 2024 – Fall 2024", ko: "2024년 여름방학 – 2학기" },
+      period: "2024.06 – 2024.12",
     },
   ],
 
@@ -321,7 +321,7 @@ window.CONTENT = {
       title: { en: "Activities", ko: "교내외활동" },
       items: [
         { en: "Student Council President, Intelligent IoT Convergence / Electronic Engineering (2025)", ko: "지능-IoT융합전공/융합전자공학전공 학생회장 (2025)" },
-        { en: "Student Council Vice President (Fall 2024)", ko: "부학회장 (2024년 2학기)" },
+        { en: "Student Council Vice President (2024.09 – 2024.12)", ko: "부학회장 (2024.09 – 2024.12)" },
         { en: "Hackathon Instructor, Sangmyung Univ. Affiliated Girls' High School (2024.08)", ko: "상명대부속여고 해커톤 교육강사 (2024.08)" },
         { en: "INIRO — Programming Club (2021 – 2025)", ko: "이니로 — 프로그래밍 동아리 (2021 – 2025)" },
       ],
