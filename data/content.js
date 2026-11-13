@@ -111,8 +111,7 @@ window.CONTENT = {
         en: "Ministry of Culture, Sports and Tourism — Copyright Workforce Development Program",
         ko: "문화체육관광부 저작권 인력양성 사업",
       },
-      period: { en: "2026.08 – Present", ko: "2026.08 – 현재" },
-      ongoing: true,
+      period: "2026.08 – 2026.12",
     },
     {
       title: { en: "Excellent Young Researcher (Seed Research) grant", ko: "우수신진연구 (씨앗연구)" },
@@ -134,7 +133,7 @@ window.CONTENT = {
       period: "2026.10 – 2026.12",
       image: "images/lameditech.jpg",
       imageAlt: { en: "Forehead ROI cropping rules compared on skin images", ko: "피부 이미지에서 이마 ROI crop 규칙 비교" },
-      domains: ["vision"], type: "industry", ongoing: true,
+      domains: ["vision"], type: "industry",
       desc: {
         en: "Labeling program for building skin-condition (e.g., wrinkle) datasets: face detection and mesh-map generation with MediaPipe, with ROI-cropping rules designed on top of the mesh.",
         ko: "피부 상태(주름 등) 판단용 데이터 확보를 위한 라벨링 프로그램. MediaPipe로 안면 인식 및 메쉬맵 생성, 이를 바탕으로 ROI crop rule 설계",
@@ -180,14 +179,14 @@ window.CONTENT = {
       linkLabel: "GitHub",
       image: "images/bifusion.png",
       imageAlt: { en: "Bifusion Research Hub interface", ko: "Bifusion Research Hub 화면" },
-      domains: ["vision"], type: "team", ongoing: true,
+      domains: ["vision"], type: "team",
       role: {
         en: "Team lead; concept design; owned all AI components including the augmentation and few-shot models.",
         ko: "팀장, 컨셉 기획, 증강 모델·few-shot 모델 등 AI 전반 담당",
       },
       desc: {
-        en: "Designed a Normal/Anomaly classifier trainer that fine-tunes on user data, combining the medical diffusion model Medfusion with the few-shot model ProtoNet.",
-        ko: "의료 특화 확산모델 Medfusion과 few-shot 모델 ProtoNet으로 사용자 데이터 기반 파인튜닝하는 Normal/Anomaly 분류 학습기 설계",
+        en: "Designed a Normal/Anomaly classifier trainer that fine-tunes the denoising U-Net of the medical diffusion model Medfusion on user data and combines the generated images with the few-shot model ProtoNet.",
+        ko: "의료 특화 확산모델 Medfusion의 Denoising U-Net을 사용자 데이터로 파인튜닝하고, 생성 영상을 few-shot 모델 ProtoNet과 결합한 Normal/Anomaly 분류 학습기 설계",
       },
       tech: ["Medfusion", "Diffusion", "ProtoNet", "Few-shot"],
     },
@@ -234,8 +233,8 @@ window.CONTENT = {
       imageAlt: { en: "Study design: inputs, context fusion position, and evaluation", ko: "연구 설계: 입력, 조직 정보 결합 위치, 평가 체계" },
       domains: ["bio"], type: "industry", lead: true,
       role: {
-        en: "Carried out the entire pipeline single-handedly, except for the data provided by KRIBB.",
-        ko: "생명연 제공 데이터를 제외한 전 과정 단독 수행",
+        en: "Owned model and experiment design, development, and analysis on KRIBB data; co-authors handled data preprocessing and collection, and paper figures and tables.",
+        ko: "생명연 제공 데이터로 모델·실험 설계부터 개발·분석까지 전담 (데이터 전처리·외부 데이터 수집, 논문 figure·table 제작은 공동저자 담당)",
       },
       desc: {
         en: "Developed a Chemprop-based GNN for predicting tissue-to-plasma partition coefficients (Kp) and built a Streamlit demo page.",
@@ -256,8 +255,8 @@ window.CONTENT = {
         ko: "팀장, 메인 프로그래머, 양자화 및 NPU 최적화",
       },
       desc: {
-        en: "Built a face-analysis pipeline on the Kneron KL630 NPU: YOLOv5s face detection, an EfficientNet-B0 emotion classifier (alert / non-alert), and gender and age-group classifiers compressed into MobileNetV3-Small by knowledge distillation from RegNetY-1.6GF teachers, quantized and deployed with the Kneron SDK in Docker.",
-        ko: "Kneron KL630 NPU 기반 얼굴 분석 파이프라인 구축: YOLOv5s 얼굴 검출, EfficientNet-B0 감정 분류(경계/비경계), RegNetY-1.6GF teacher에서 MobileNetV3-Small로 지식 증류한 성별·연령대 분류 모델을 Kneron SDK·Docker 환경에서 양자화해 배포",
+        en: "Built a face-analysis pipeline: YOLOv5s face detection quantized with the Kneron SDK (Docker) and deployed on the KL630 NPU for real-time detection and coordinate transmission; emotion (alert / non-alert, EfficientNet-B0) and gender and age-group classifiers (MobileNetV3-Small distilled from RegNetY-1.6GF) ran on the CPU.",
+        ko: "얼굴 분석 파이프라인 구축: YOLOv5s 얼굴 검출 모델을 Kneron SDK(Docker 환경)로 양자화해 KL630 NPU에 탑재, 실시간 얼굴 검출 및 좌표 전송. 감정 분류(경계/비경계, EfficientNet-B0)와 RegNetY-1.6GF teacher에서 MobileNetV3-Small로 지식 증류한 성별·연령대 분류는 CPU에서 수행",
       },
       tech: ["Kneron KL630", "YOLOv5s", "EfficientNet-B0", "MobileNetV3-Small", "Knowledge Distillation", "Quantization", "Docker"],
       results: {
@@ -278,8 +277,8 @@ window.CONTENT = {
       },
       tech: ["NPU", "Iris Segmentation", "Python → C"],
       results: {
-        en: "Segmentation IoU 0.94–0.97 and mAP50 0.99 for iris, pupil, and eyelid; 47.4 ms per image end-to-end on the NPU (about 21 FPS), roughly 7× faster than Jetson Nano with TensorRT (330.7 ms).",
-        ko: "홍채·동공·눈꺼풀 분할 IoU 0.94–0.97, mAP50 0.99. NPU에서 이미지당 전체 처리 47.4ms(약 21 FPS)로, TensorRT를 적용한 Jetson Nano(330.7ms)보다 약 7배 빠름",
+        en: "Segmentation IoU 0.94–0.97 and mAP50 0.99 for iris, pupil, and eyelid; the segmentation stage (incl. pre/post-processing) took 47.4 ms per image on the NPU (about 21 FPS), roughly 7× faster than Jetson Nano with TensorRT (330.7 ms).",
+        ko: "홍채·동공·눈꺼풀 분할 IoU 0.94–0.97, mAP50 0.99. 분할 단계(전처리·추론·후처리)가 NPU에서 이미지당 47.4ms(약 21 FPS)로, TensorRT를 적용한 Jetson Nano(330.7ms)보다 약 7배 빠름",
       },
       outcome: { en: "IEIE Summer Conference paper (co-author)", ko: "대한전자공학회 하계학술대회 논문 (공동저자)" },
     },
@@ -290,7 +289,7 @@ window.CONTENT = {
     {
       title: { en: "Undergraduate Researcher", ko: "학부연구생" },
       org: { en: "Dept. of Computer Science, Sangmyung University", ko: "상명대학교 컴퓨터과학과" },
-      period: { en: "Spring 2025 – Fall 2026", ko: "2025년 1학기 – 2026년 2학기" },
+      period: "2025.03 – 2026.12",
     },
     {
       title: { en: "Intern", ko: "인턴" },
